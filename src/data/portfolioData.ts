@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/dharmadurai-d-6815141b5/",
   github: "https://github.com/dharmadurai-sf3825",
   livePortfolioUrl: "https://dharmadurai-dhanabal-portfolio.ai.studio",
-  summary: "Results-driven Front-End Team Lead & Senior Angular Developer with 4+ years of experience engineering high-throughput, enterprise-grade SaaS platforms for Syncfusion's flagship customer-support product, BoldDesk. I know AI based development also—leveraging custom AI coding agents, custom skills, and prompt engineering to accelerate delivery, code quality, and architectural consistency. Proven track record leading core modules: Performance Optimization, Front-End Security, One-Click Migration, and Ticket Approval Workflows.",
+  summary: "Senior Angular Developer and Front-End Team Lead with 4+ years of experience building enterprise-grade SaaS applications. Specialized in Angular, TypeScript, JavaScript, HTML, and CSS, with expertise in performance optimization, front-end security, and scalable application architecture. Currently contributing to Syncfusion's BoldDesk platform, driving initiatives that improve application performance, security, maintainability, and user experience. Experienced in leveraging AI coding agents, AI skills, and AI-assisted development practices to enhance productivity, code quality, and delivery efficiency. Proven ability to lead technical initiatives, mentor developers, and deliver robust solutions aligned with business objectives.",
   yearsExperience: "4+",
   performanceRating: "Average 4.9 / 5.0",
   promotionSpeed: "Developer to Team Lead in ~3 Years",
