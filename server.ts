@@ -16,16 +16,30 @@ LINKEDIN: https://www.linkedin.com/in/dharmadurai-d-6815141b5/
 GITHUB: https://github.com/dharmadurai-sf3825
 
 SUMMARY:
-Front-End Developer with 4+ years of experience building and scaling enterprise-grade Angular applications for a global SaaS customer-support platform (BoldDesk) at Syncfusion Software that drives millions in annual revenue. Specialized in TypeScript, RxJS, and component architecture, with proven strengths in performance optimization (OnPush change detection), front-end security (XSS/CSRF, CSP), accessibility, and reusable component design. Promoted to Team Lead in 2025; combines hands-on engineering with mentorship and Agile delivery to ship high-impact, customer-facing features.
+Front-End Developer & Team Lead with 4+ years of experience building and scaling enterprise-grade Angular applications for a global SaaS customer-support platform (BoldDesk) at Syncfusion Software that drives millions in annual revenue. Active practitioner in AI-assisted software development, leveraging custom AI coding agents, custom skills, and prompt engineering to accelerate delivery, code quality, and architectural consistency. Specialized in TypeScript, RxJS, and component architecture, with proven strengths in performance optimization (OnPush change detection), front-end security (XSS/CSRF, CSP), accessibility, and reusable component design. Promoted to Team Lead in 2025.
+
+AI-ASSISTED DEVELOPMENT & CUSTOM SOLUTIONS:
+- Custom AI Skills Engineering: Designed custom AI skills tailored to specific business, domain, and product requirements.
+- Custom AI Coding Agents: Built custom AI coding agents to assist with feature implementation, code generation, code review, and development workflows.
+- AI-Accelerated Delivery & Quality: Utilized AI tools to accelerate software development while maintaining quality, performance, and code consistency.
+- AI-Driven Planning & Analysis: Applied AI-driven approaches for requirement analysis, technical planning, documentation, and implementation support.
+
+DEVELOPMENT APPROACH (6-Step Feature Workflow):
+1. Requirement Analysis: Understand core business requirements & user expectations.
+2. Technical Design: Create initial implementation plan & technical design.
+3. Solution Review: Audit proposed solution, identifying edge cases, dependencies, and risks.
+4. Agent & Skill Setup: Deploy custom AI agents & skill guidelines.
+5. Implementation: Build the solution based on the reviewed plan.
+6. Validation & Testing: Validate implementation through unit tests and quality checks.
 
 TECHNICAL SKILLS:
-- Frameworks & Libraries: Angular (2+ / latest 18+), RxJS, NgRx, Angular Material
+- Frameworks & Libraries: Angular (2+ / latest 18+), RxJS, NgRx, Angular Material, React
+- AI-Assisted Development: Custom AI Skills, Custom AI Coding Agents, AI-Driven Requirement Analysis, Prompt Engineering
 - Languages: TypeScript, JavaScript (ES6+), HTML5, CSS3
-- Styling & UI: SCSS/SASS, Bootstrap, Responsive & Cross-Browser Design, Component Libraries
-- Testing: Jest, Jasmine, Karma, Unit & Component Testing
+- Styling & UI: SCSS/SASS, Bootstrap, Tailwind CSS, Responsive & Cross-Browser Design
+- Testing & Quality: Jest, Jasmine, Karma, Unit & Component Testing
 - Performance & Security: OnPush Change Detection, Lazy Loading, Content Security Policy (CSP), XSS/CSRF Prevention, HTML Sanitization
 - Practices: Web Accessibility (WCAG), REST API Integration, Agile/Scrum, Code Reviews, Git
-- Additional: Basic .NET MVC, Reusable Component Architecture, Technical Mentorship
 
 PROFESSIONAL EXPERIENCE:
 Syncfusion Software Private Limited (Chennai, TN)
@@ -33,16 +47,17 @@ Syncfusion Software Private Limited (Chennai, TN)
 - Front-End Developer - BoldDesk Product (Apr 2022 - Jun 2025)
 
 Key Accomplishments & Shipped Features at BoldDesk:
-1. Performance Optimization: Re-architected ticket module with Angular OnPush change detection, reducing unnecessary re-renders and boosting list/detail load responsiveness for high-volume agent workflows.
-2. Front-End Security: Implemented XSS and CSRF protection using Content Security Policy (CSP) and HTML sanitization across ticket content and user inputs.
-3. Multi-Level Ticket Approval Workflow: Built configurable approval engine with Everyone, Anyone, and Majority approval rules for enterprise customers.
-4. One-Click Migration Tool: Developed migration tool to import tickets, contacts, contact groups, agents, and agent groups from competing helpdesk platforms (Zendesk, Freshdesk, etc.).
-5. Bulk Ticket Data Import: Created file-based bulk import capability streamlining customer onboarding.
-6. Snooze Ticket Support: Delivered ticket snooze functionality allowing agents to temporarily pause tickets and auto-reactivate on schedule or customer reply.
-7. Agent Skill & Shift Support: Implemented skill-based and shift-based ticket handling aligning tickets with agent expertise and availability.
-8. Merge Tickets: Built ticket consolidation feature to merge duplicate tickets into a single thread while preserving full conversation history.
-9. Reusable Component Library: Designed shared Angular component library adopted across product modules.
-10. Engineering Leadership: Promoted to Team Lead; mentors developers, conducts code reviews, and leads sprint planning & delivery.
+1. AI-Assisted Engineering: Built and deployed custom AI coding agents and skills to streamline feature implementation, code review, and quality checks.
+2. Performance Optimization: Re-architected ticket module with Angular OnPush change detection, reducing unnecessary re-renders and boosting list/detail load responsiveness.
+3. Front-End Security: Implemented XSS and CSRF protection using Content Security Policy (CSP) and HTML sanitization across ticket content and user inputs.
+4. Multi-Level Ticket Approval Workflow: Built configurable approval engine with Everyone, Anyone, and Majority approval rules.
+5. One-Click Migration Tool: Developed migration tool to import tickets, contacts, contact groups, agents, and agent groups from Zendesk and Freshdesk.
+6. Bulk Ticket Data Import: Created file-based bulk import capability.
+7. Snooze Ticket Support: Delivered ticket snooze functionality allowing agents to temporarily pause tickets.
+8. Agent Skill & Shift Support: Implemented skill-based and shift-based ticket handling.
+9. Merge Tickets: Built ticket consolidation feature to merge duplicate tickets into a single thread.
+10. Reusable Component Library: Designed shared Angular component library adopted across product modules.
+11. Engineering Leadership: Promoted to Team Lead; mentors developers, conducts code reviews, and leads sprint planning & delivery.
 
 KEY ACHIEVEMENTS:
 - Employee of the Month (3x) for exceptional sprint delivery and performance.
@@ -84,7 +99,7 @@ async function startServer() {
       
       const systemInstruction = `You are "Ask Dharmadurai AI", an intelligent portfolio assistant for Dharmadurai Dhanabal's professional website.
 You represent Dharmadurai Dhanabal, a Front-End Team Lead & Angular Specialist at Syncfusion (BoldDesk).
-Answer questions concisely, professionally, and warmly. Highlight his enterprise Angular experience, OnPush performance optimizations, XSS/CSP security engineering, multi-level ticket approval workflows, migration tools, and leadership accolades (3x Employee of the Month, 5/5 ratings).
+Answer questions concisely, professionally, and warmly. Highlight his enterprise Angular experience, AI-assisted development expertise (custom AI coding agents & custom skills), OnPush performance optimizations, XSS/CSP security engineering, multi-level ticket approval workflows, migration tools, and leadership accolades (3x Employee of the Month, 5/5 ratings).
 Always use clear bullet points when explaining technical concepts or experience details.
 If asked about contact info, state his email (dharmadurai.sf3825@gmail.com), phone (+91 8220762702), and LinkedIn.
 

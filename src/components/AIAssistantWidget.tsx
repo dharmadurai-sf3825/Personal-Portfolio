@@ -5,14 +5,7 @@ import {
   Send, 
   User, 
   Bot, 
-  Loader2, 
-  CheckCircle2, 
-  RefreshCcw,
-  ArrowRight,
-  MessageSquare,
-  Building2,
-  Zap,
-  ShieldCheck
+  Loader2
 } from 'lucide-react';
 import { ChatMessage } from '../types';
 
@@ -26,7 +19,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
     {
       id: '1',
       sender: 'assistant',
-      text: "Hello! I'm Dharmadurai's AI Portfolio Assistant. Ask me anything about his enterprise Angular experience, BoldDesk achievements, OnPush performance optimizations, or leadership trajectory!",
+      text: "Hello! I'm Dharmadurai's AI Portfolio Assistant. Ask me anything about his enterprise Angular experience, BoldDesk achievements, performance optimizations, or leadership trajectory!",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -36,7 +29,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
 
   const promptChips = [
     "What are Dharmadurai's key achievements?",
-    "Explain his OnPush performance optimization",
+    "Explain his performance optimization work",
     "Tell me about his multi-level ticket approval feature",
     "What's his leadership experience as Team Lead?",
     "How can I contact him for opportunities?"
@@ -92,7 +85,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
       const fallbackReply: ChatMessage = {
         id: (Date.now() + 1).toString(),
         sender: 'assistant',
-        text: "Dharmadurai Dhanabal is a Front-End Team Lead & Angular Specialist with 4+ years building Syncfusion's BoldDesk SaaS platform. He holds a 5/5 performance rating, 3x Employee of the Month awards, and expertise in Angular OnPush, CSP security, and component architecture. Contact him at dharmadurai.sf3825@gmail.com!",
+        text: "Dharmadurai Dhanabal is a Front-End Team Lead & Angular Specialist with 4+ years building Syncfusion's BoldDesk SaaS platform. He holds a 5/5 performance rating, 3x Employee of the Month awards, and expertise in Angular, CSP security, and component architecture. Contact him at dharmadurai.sf3825@gmail.com!",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       setMessages(prev => [...prev, fallbackReply]);
@@ -103,24 +96,24 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl h-[85vh] max-h-[680px] flex flex-col shadow-2xl overflow-hidden relative">
+      <div className="bg-[var(--bg-card)] border border-[var(--border-main)] rounded-2xl w-full max-w-2xl h-[85vh] max-h-[680px] flex flex-col shadow-2xl overflow-hidden relative transition-colors duration-300">
         
         {/* Modal Header */}
-        <div className="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div className="p-4 bg-[var(--bg-subcard)] border-b border-[var(--border-main)] flex items-center justify-between shrink-0 transition-colors duration-300">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-500 p-[1px] shadow-md shadow-indigo-500/20">
-              <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-500 p-[1px] shadow-md">
+              <div className="w-full h-full bg-[var(--bg-card)] rounded-[11px] flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
+              <h3 className="text-sm font-bold text-[var(--text-heading)] flex items-center gap-2">
                 <span>Ask Dharmadurai AI Co-Pilot</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 font-bold">
                   Online
                 </span>
               </h3>
-              <p className="text-[11px] text-slate-400 font-mono">
+              <p className="text-[11px] text-[var(--text-sub)] font-mono">
                 Powered by Gemini AI • Enterprise Resume Assistant
               </p>
             </div>
@@ -128,7 +121,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg bg-[var(--bg-card)] hover:bg-[var(--bg-subcard)] text-[var(--text-sub)] hover:text-[var(--text-heading)] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -146,7 +139,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
               <div
                 className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 ${
                   msg.sender === 'user'
-                    ? 'bg-cyan-500 text-slate-950'
+                    ? 'bg-cyan-600 text-white'
                     : 'bg-indigo-600 text-white'
                 }`}
               >
@@ -157,7 +150,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
                 className={`max-w-[85%] rounded-2xl p-3.5 text-xs sm:text-sm leading-relaxed ${
                   msg.sender === 'user'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-tr-none'
-                    : 'bg-slate-950 border border-slate-800 text-slate-200 rounded-tl-none'
+                    : 'bg-[var(--bg-subcard)] border border-[var(--border-main)] text-[var(--text-heading)] rounded-tl-none font-normal'
                 }`}
               >
                 <p className="whitespace-pre-wrap">{msg.text}</p>
@@ -169,8 +162,8 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
           ))}
 
           {loading && (
-            <div className="flex items-center gap-2 text-xs text-slate-400 p-2">
-              <Loader2 className="w-4 h-4 text-cyan-400 animate-spin" />
+            <div className="flex items-center gap-2 text-xs text-[var(--text-sub)] p-2">
+              <Loader2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 animate-spin" />
               <span>Analyzing Dharmadurai's resume & architecture experience...</span>
             </div>
           )}
@@ -179,13 +172,13 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
         </div>
 
         {/* Prompt Chips */}
-        <div className="px-4 py-2 bg-slate-950/60 border-t border-slate-800/80 flex items-center gap-2 overflow-x-auto shrink-0">
-          <span className="text-[10px] text-slate-500 uppercase font-mono font-bold shrink-0">Suggested:</span>
+        <div className="px-4 py-2 bg-[var(--bg-subcard)] border-t border-[var(--border-main)] flex items-center gap-2 overflow-x-auto shrink-0 transition-colors duration-300">
+          <span className="text-[10px] text-[var(--text-sub)] uppercase font-mono font-bold shrink-0">Suggested:</span>
           {promptChips.map((chip, idx) => (
             <button
               key={idx}
               onClick={() => handleSendMessage(chip)}
-              className="text-[11px] text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 px-2.5 py-1 rounded-full whitespace-nowrap transition-colors cursor-pointer shrink-0"
+              className="text-[11px] text-[var(--text-body)] bg-[var(--bg-card)] hover:bg-[var(--bg-subcard)] border border-[var(--border-main)] px-2.5 py-1 rounded-full whitespace-nowrap transition-colors cursor-pointer shrink-0 font-medium"
             >
               {chip}
             </button>
@@ -193,7 +186,7 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
         </div>
 
         {/* Input Footer */}
-        <div className="p-3 bg-slate-950 border-t border-slate-800 shrink-0">
+        <div className="p-3 bg-[var(--bg-subcard)] border-t border-[var(--border-main)] shrink-0 transition-colors duration-300">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -205,13 +198,13 @@ export const AIAssistantWidget: React.FC<AIAssistantWidgetProps> = ({ isOpen, on
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about Dharmadurai's experience, BoldDesk, Angularskills..."
-              className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-200 focus:border-cyan-500 focus:outline-none placeholder-slate-500"
+              placeholder="Ask about Dharmadurai's experience, BoldDesk, Angular skills..."
+              className="flex-1 bg-[var(--bg-card)] border border-[var(--border-main)] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-[var(--text-heading)] focus:border-cyan-500 focus:outline-none placeholder-slate-400"
             />
             <button
               type="submit"
               disabled={!input.trim() || loading}
-              className="p-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white disabled:opacity-50 transition-all cursor-pointer"
+              className="p-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white disabled:opacity-50 transition-all cursor-pointer"
             >
               <Send className="w-4 h-4" />
             </button>

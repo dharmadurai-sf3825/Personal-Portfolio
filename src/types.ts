@@ -1,7 +1,7 @@
 export interface FeatureHighlight {
   id: string;
   title: string;
-  category: 'Security & Performance' | 'Enterprise Workflows' | 'Data & Migration' | 'Component Architecture';
+  category: string;
   badge: string;
   shortDescription: string;
   fullProblem: string;
@@ -11,6 +11,17 @@ export interface FeatureHighlight {
   techStack: string[];
   codeSnippet?: string;
   diagramSteps?: string[];
+}
+
+export interface PromotionRecord {
+  id: string;
+  oldDesignation: string;
+  newDesignation: string;
+  reviewDate: string;
+  effectiveDate: string;
+  duration?: string;
+  cumulativeTime?: string;
+  badge?: string;
 }
 
 export interface WorkExperience {
@@ -32,7 +43,6 @@ export interface SkillCategory {
   iconName: string;
   skills: {
     name: string;
-    level: 'Expert' | 'Advanced' | 'Proficient';
     description: string;
     highlightTag?: string;
   }[];

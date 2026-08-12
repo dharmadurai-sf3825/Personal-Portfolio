@@ -1,9 +1,5 @@
 import React from 'react';
 import { 
-  ShieldCheck, 
-  Zap, 
-  Award, 
-  Briefcase, 
   ArrowRight, 
   Github, 
   Linkedin, 
@@ -12,12 +8,11 @@ import {
   MapPin, 
   Download, 
   Sparkles,
-  Layers,
-  CheckCircle2,
-  Terminal,
-  Cpu
+  UserCheck,
+  Globe
 } from 'lucide-react';
-import { PERSONAL_INFO, QUICK_STATS } from '../data/portfolioData';
+import { PERSONAL_INFO } from '../data/portfolioData';
+import profilePhoto from '../assets/images/dharmadurai_photo_1786281928624.jpg';
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -26,113 +21,118 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAIModal }) => {
   return (
-    <section id="hero" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-      {/* Background ambient lighting effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-cyan-500/10 via-blue-600/15 to-indigo-600/10 blur-[120px] rounded-full pointer-events-none" />
+    <section id="hero" className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden transition-colors duration-300">
+      {/* Ambient Glow Effects */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[700px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-cyan-500/10 via-blue-600/15 to-indigo-600/10 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-72 h-72 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column - Main Copy & CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          {/* Left Column: Executive Copy & CTAs */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 shadow-inner mb-6">
-              <span className="flex h-2 w-2 relative">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-main)] shadow-sm mb-5 max-w-full transition-colors duration-300">
+              <span className="flex h-2 w-2 relative shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-xs font-semibold text-slate-200 tracking-wide">
-                Promoted to Front-End Team Lead @ Syncfusion (2025)
+              <span className="text-xs font-semibold text-[var(--text-heading)] truncate">
+                Front-End Team Lead @ Syncfusion (BoldDesk SaaS)
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--text-heading)] tracking-tight leading-[1.12] mb-3 break-words w-full">
               DHARMADURAI <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 dark:from-cyan-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 DHANABAL
               </span>
             </h1>
 
-            {/* Sub-headline */}
-            <h2 className="text-lg sm:text-xl font-semibold text-slate-300 mb-6 flex items-center gap-2">
-              <span className="text-cyan-400 font-mono">&lt;</span>
-              <span>Front-End Developer & Angular Specialist</span>
-              <span className="text-cyan-400 font-mono">/&gt;</span>
-            </h2>
-
-            {/* Executive Bio */}
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8 max-w-2xl font-normal">
-              Front-End Developer with <strong className="text-white font-semibold">4+ years of experience</strong> building and scaling enterprise-grade Angular applications for <strong className="text-cyan-300 font-semibold">BoldDesk</strong> — a global SaaS customer support platform at Syncfusion driving millions in annual revenue. Specialized in TypeScript, RxJS stream architectures, OnPush performance optimization, front-end security (XSS/CSP), and leading engineering teams to ship mission-critical features.
-            </p>
-
-            {/* Quick Tech Highlights Badge Row */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {[
-                "Angular 18+", "RxJS", "TypeScript", "OnPush Strategy", 
-                "CSP & XSS Security", "NgRx", "Component Design", "Mentorship"
-              ].map((tech) => (
+            {/* Target Role Positioning Tags */}
+            <div className="flex flex-wrap items-center gap-2 mb-5">
+              {PERSONAL_INFO.targetRoles.map((role) => (
                 <span
-                  key={tech}
-                  className="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-900 border border-slate-800 text-slate-300 hover:border-cyan-500/40 hover:text-cyan-300 transition-colors"
+                  key={role}
+                  className="text-xs font-semibold px-2.5 py-1 rounded-md border bg-[var(--bg-subcard)] text-[var(--text-heading)] border-[var(--border-main)]"
                 >
-                  {tech}
+                  {role}
                 </span>
               ))}
             </div>
 
+            {/* Impact-Driven Professional Summary */}
+            <p className="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-6 max-w-2xl font-normal">
+              Senior Angular Developer and Front-End Team Lead with <strong className="text-[var(--text-heading)] font-semibold">4+ years of enterprise SaaS experience</strong> at Syncfusion. Led end-to-end development for mission-critical modules including <strong className="text-cyan-600 dark:text-cyan-400 font-semibold">Performance Optimization</strong>, <strong className="text-cyan-600 dark:text-cyan-400 font-semibold">Front-End Security</strong>, <strong className="text-cyan-600 dark:text-cyan-400 font-semibold">One-Click Migration</strong>, and <strong className="text-cyan-600 dark:text-cyan-400 font-semibold">Ticket Approval Workflow</strong> for BoldDesk. Specialist in Angular 18+, RxJS, web security (XSS/CSP/CSRF), and scalable front-end systems.
+            </p>
+
+            {/* Delivered Core Modules Highlight Row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full mb-8">
+              <div className="p-2.5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-main)] shadow-xs transition-colors duration-300">
+                <div className="text-[10px] font-mono font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-0.5">Performance</div>
+                <div className="text-xs text-[var(--text-heading)] leading-tight font-medium">60fps Ticket Rendering</div>
+              </div>
+
+              <div className="p-2.5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-main)] shadow-xs transition-colors duration-300">
+                <div className="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-0.5">Security</div>
+                <div className="text-xs text-[var(--text-heading)] leading-tight font-medium">XSS, CSP & PII Scrubbing</div>
+              </div>
+
+              <div className="p-2.5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-main)] shadow-xs transition-colors duration-300">
+                <div className="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-0.5">One Click Migration</div>
+                <div className="text-xs text-[var(--text-heading)] leading-tight font-medium">Zendesk/Freshdesk Ingestion</div>
+              </div>
+
+              <div className="p-2.5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-main)] shadow-xs transition-colors duration-300">
+                <div className="text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-0.5">Approvals</div>
+                <div className="text-xs text-[var(--text-heading)] leading-tight font-medium">Ticket Approval Workflow</div>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto mb-10">
-              <a
-                href="#features"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto"
-              >
-                <span>Explore BoldDesk Features</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href="#sandbox"
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 font-semibold text-sm transition-all cursor-pointer w-full sm:w-auto"
-              >
-                <Terminal className="w-4 h-4 text-cyan-400" />
-                <span>Try Live Sandbox</span>
-              </a>
-
+            <div className="flex flex-wrap items-center gap-3 w-full mb-8">
               <button
                 onClick={onOpenResume}
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 font-medium text-sm transition-all cursor-pointer w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto"
               >
-                <Download className="w-4 h-4 text-indigo-400" />
-                <span>Resume</span>
+                <Download className="w-4 h-4" />
+                <span>Download Resume</span>
               </button>
+
+              <a
+                href="#features"
+                className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 font-semibold text-sm transition-all cursor-pointer w-full sm:w-auto"
+              >
+                <span>View Delivered Modules</span>
+                <ArrowRight className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+              </a>
 
               <button
                 onClick={onOpenAIModal}
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-sm font-medium transition-all cursor-pointer w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/50 dark:hover:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 text-sm font-semibold transition-all cursor-pointer w-full sm:w-auto"
               >
-                <Sparkles className="w-4 h-4 text-indigo-400" />
+                <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                 <span>Ask AI Co-Pilot</span>
               </button>
             </div>
 
-            {/* Social & Contact Direct Links */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-4 border-t border-slate-800/80 w-full">
+            {/* Contact Strip */}
+            <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-300 pt-4 border-t border-slate-200 dark:border-slate-800 w-full">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="flex items-center gap-1.5 hover:text-cyan-300 transition-colors"
+                className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium"
               >
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
-                <span>{PERSONAL_INFO.email}</span>
+                <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <span className="break-all">{PERSONAL_INFO.email}</span>
               </a>
 
               <a
                 href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-1.5 hover:text-cyan-300 transition-colors"
+                className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium"
               >
-                <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                <Phone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
                 <span>{PERSONAL_INFO.phone}</span>
               </a>
 
@@ -140,9 +140,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAIModal }) => {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-cyan-300 transition-colors"
+                className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
               >
-                <Linkedin className="w-3.5 h-3.5 text-blue-400" />
+                <Linkedin className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
                 <span>LinkedIn</span>
               </a>
 
@@ -150,107 +150,94 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAIModal }) => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-cyan-300 transition-colors"
+                className="flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-medium"
               >
-                <Github className="w-3.5 h-3.5 text-slate-300" />
+                <Github className="w-3.5 h-3.5 text-slate-700 dark:text-slate-300 shrink-0" />
                 <span>GitHub</span>
               </a>
 
-              <span className="flex items-center gap-1.5 text-slate-500">
-                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+              <a
+                href={PERSONAL_INFO.livePortfolioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-cyan-700 dark:text-cyan-300 hover:underline font-medium"
+              >
+                <Globe className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <span>Portfolio URL</span>
+              </a>
+
+              <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>{PERSONAL_INFO.location}</span>
               </span>
             </div>
 
           </div>
 
-          {/* Right Column - Visual Code Dashboard & Metrics Card */}
+          {/* Right Column: Profile Headshot & Metric Dashboard */}
           <div className="lg:col-span-5 relative">
-            
-            {/* Visual Glass Window showcasing Angular Architecture */}
-            <div className="bg-slate-900/90 rounded-2xl border border-slate-800 shadow-2xl p-5 relative overflow-hidden group hover:border-slate-700 transition-all">
+            <div className="bg-[var(--bg-card)] rounded-3xl border border-[var(--border-main)] shadow-xl p-6 relative overflow-hidden transition-colors duration-300">
               
-              {/* Window Header */}
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800/80">
+              {/* Photo Frame & Header */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-main)]">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-rose-500" />
+                  <div className="w-3 h-3 rounded-full bg-amber-500" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-500" />
                 </div>
-                <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
-                  <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-                  bolddesk-agent-ticket.module.ts
-                </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  OnPush
+                <span className="text-xs font-mono text-[var(--text-sub)] flex items-center gap-1 font-semibold">
+                  <UserCheck className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  Dharmadurai Dhanabal (Team Lead)
                 </span>
               </div>
 
-              {/* Code / Architecture Snippet Box */}
-              <div className="bg-slate-950 rounded-xl p-4 font-mono text-xs text-slate-300 leading-relaxed mb-4 border border-slate-900 overflow-x-auto">
-                <p className="text-slate-500">// Syncfusion BoldDesk - Core Agent Module</p>
-                <p className="text-purple-400">@Component({'{'}</p>
-                <p className="pl-4 text-slate-300">selector: <span className="text-emerald-300">'app-bolddesk-ticket-thread'</span>,</p>
-                <p className="pl-4 text-slate-300">changeDetection: <span className="text-amber-300">ChangeDetectionStrategy.OnPush</span></p>
-                <p className="text-purple-400">{'}'})</p>
-                <p className="text-blue-400 font-semibold">export class <span className="text-cyan-300">AgentTicketModule</span> {'{'}</p>
-                <p className="pl-4 text-slate-400">// Security Hardened with CSP & DOMPurify</p>
-                <p className="pl-4 text-slate-300">sanitizePayload(raw: string) {'{'}</p>
-                <p className="pl-8 text-cyan-400">return <span className="text-slate-300">this.domSanitizer.bypassSecurityTrustHtml(clean);</span></p>
-                <p className="pl-4 text-slate-300">{'}'}</p>
-                <p className="text-blue-400">{'}'}</p>
-              </div>
+              {/* Profile Image Frame */}
+              <div className="relative mb-5 rounded-2xl overflow-hidden border border-[var(--border-main)] bg-[var(--bg-subcard)] flex flex-col items-center justify-center p-1 transition-colors duration-300">
+                <div className="w-full aspect-[4/5] max-h-[460px] bg-[var(--bg-subcard)] relative rounded-xl overflow-hidden flex items-center justify-center">
+                  <img
+                    src={profilePhoto}
+                    alt="Dharmadurai Dhanabal - Senior Angular Team Lead"
+                    className="w-full h-full object-cover object-[center_12%] filter contrast-105"
+                  />
 
-              {/* Quick Stat Grid Cards */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800/80">
-                  <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
-                    <span>Performance</span>
-                    <Zap className="w-3.5 h-3.5 text-amber-400" />
+                  {/* Overlay Identity Badge (Theme Adaptive) */}
+                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[var(--bg-card)]/95 backdrop-blur-md border border-[var(--border-main)] shadow-lg flex items-center justify-between text-left transition-colors duration-300">
+                    <div>
+                      <div className="text-xs font-bold text-[var(--text-heading)]">DHARMADURAI DHANABAL</div>
+                      <div className="text-[11px] text-cyan-700 dark:text-cyan-400 font-mono font-semibold">Front-End Team Lead @ Syncfusion</div>
+                    </div>
                   </div>
-                  <div className="text-xl font-bold text-white font-mono">65%</div>
-                  <div className="text-[11px] text-slate-400">Re-render Latency Cut</div>
-                </div>
-
-                <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800/80">
-                  <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
-                    <span>Security</span>
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  </div>
-                  <div className="text-xl font-bold text-white font-mono">100%</div>
-                  <div className="text-[11px] text-slate-400">XSS & CSP Compliant</div>
-                </div>
-
-                <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800/80">
-                  <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
-                    <span>Recognitions</span>
-                    <Award className="w-3.5 h-3.5 text-cyan-400" />
-                  </div>
-                  <div className="text-xl font-bold text-white font-mono">3x</div>
-                  <div className="text-[11px] text-slate-400">Employee of the Month</div>
-                </div>
-
-                <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800/80">
-                  <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
-                    <span>Rating</span>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
-                  </div>
-                  <div className="text-xl font-bold text-white font-mono">5/5</div>
-                  <div className="text-[11px] text-slate-400">Consistent Reviews</div>
                 </div>
               </div>
 
-              {/* Bottom Quote Banner */}
-              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                <span className="flex items-center gap-1.5">
-                  <Briefcase className="w-3.5 h-3.5 text-slate-400" />
-                  Syncfusion Software (Chennai)
-                </span>
-                <span className="font-mono text-cyan-400 text-[11px]">Jul 2025 - Present</span>
+              {/* Quick Metrics Grid */}
+              <div className="grid grid-cols-2 gap-2.5">
+                <div className="bg-[var(--bg-subcard)] p-3 rounded-xl border border-[var(--border-main)] transition-colors duration-300">
+                  <div className="text-[10px] font-mono text-[var(--text-sub)] uppercase font-semibold">Experience</div>
+                  <div className="text-lg font-bold text-[var(--text-heading)] font-mono">4+ Years</div>
+                  <div className="text-[10px] text-cyan-600 dark:text-cyan-400 font-medium">Syncfusion BoldDesk</div>
+                </div>
+
+                <div className="bg-[var(--bg-subcard)] p-3 rounded-xl border border-[var(--border-main)] transition-colors duration-300">
+                  <div className="text-[10px] font-mono text-[var(--text-sub)] uppercase font-semibold">Promotion</div>
+                  <div className="text-lg font-bold text-[var(--text-heading)] font-mono">Team Lead</div>
+                  <div className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">Promoted in 3 Yrs</div>
+                </div>
+
+                <div className="bg-[var(--bg-subcard)] p-3 rounded-xl border border-[var(--border-main)] transition-colors duration-300">
+                  <div className="text-[10px] font-mono text-[var(--text-sub)] uppercase font-semibold">Leadership</div>
+                  <div className="text-lg font-bold text-[var(--text-heading)] font-mono">Spot Appreciation</div>
+                  <div className="text-[10px] text-amber-600 dark:text-amber-400 font-medium">Leadership Program</div>
+                </div>
+
+                <div className="bg-[var(--bg-subcard)] p-3 rounded-xl border border-[var(--border-main)] transition-colors duration-300">
+                  <div className="text-[10px] font-mono text-[var(--text-sub)] uppercase font-semibold">Rating</div>
+                  <div className="text-lg font-bold text-[var(--text-heading)] font-mono">4.9 / 5.0</div>
+                  <div className="text-[10px] text-blue-600 dark:text-blue-400 font-medium">Last Year Average</div>
+                </div>
               </div>
 
             </div>
-
           </div>
 
         </div>
